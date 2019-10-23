@@ -28,9 +28,19 @@ class App extends Component {
     }
   };
 
+  calculateReset() {
+    this.setState({
+      operations: []
+    });
+  }
+
   onHandleClick(event) {
     const value = event.target.getAttribute("value");
     switch (value) {
+      case "clear":
+        this.calculateReset();
+        break;
+        
       case "equal":
         this.calculatorCalculation();
         break;
@@ -51,6 +61,11 @@ class App extends Component {
           <CalButtons>
             <SingleButton
               onClick={this.onHandleClick}
+              label="C"
+              value="clear"
+            ></SingleButton>{" "}
+            <SingleButton
+              onClick={this.onHandleClick}
               label="7"
               value="7"
             ></SingleButton>
@@ -59,6 +74,71 @@ class App extends Component {
               label="4"
               value="4"
             ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="1"
+              value="1"
+            ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="0"
+              value="0"
+            ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="/"
+              value="/"
+            ></SingleButton>{" "}
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="8"
+              value="8"
+            ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="5"
+              value="5"
+            ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="2"
+              value="2"
+            ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="."
+              value="."
+            ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="x"
+              value="*"
+            ></SingleButton>{" "}
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="9"
+              value="9"
+            ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="6"
+              value="6"
+            ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="3"
+              value="3"
+            ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="CE"
+              value="CE"
+            ></SingleButton>
+            <SingleButton
+              onClick={this.onHandleClick}
+              label="-"
+              value="-"
+            ></SingleButton>{" "}
             <SingleButton
               onClick={this.onHandleClick}
               label="+"
