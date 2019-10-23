@@ -34,15 +34,24 @@ class App extends Component {
     });
   }
 
+  calculateBackspace() {
+    this.setState({
+      operations: this.state.operations.slice(0, -1)
+    });
+  }
+
   onHandleClick(event) {
     const value = event.target.getAttribute("value");
     switch (value) {
       case "clear":
         this.calculateReset();
         break;
-        
+
       case "equal":
         this.calculatorCalculation();
+        break;
+      case "backspace":
+        this.calculateBackspace();
         break;
 
       default:
@@ -132,7 +141,7 @@ class App extends Component {
             <SingleButton
               onClick={this.onHandleClick}
               label="CE"
-              value="CE"
+              value="backspace"
             ></SingleButton>
             <SingleButton
               onClick={this.onHandleClick}
